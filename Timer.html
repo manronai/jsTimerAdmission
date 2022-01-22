@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+p {
+  text-align: center;
+  font-size: 60px;
+  margin-top: 0px;
+}
+</style>
+</head>
+<body onkeydown= 'k(event)'>
+
+<h2>JavaScript Timing</h2>
+
+
+<p id = "demo"> ki re</p>
+<p id = "press"> ki re</p>
+
+
+
+<script>
+var flag = false;
+var count = 60;
+var buttonpresscount = 0;
+//event function
+function k(event){
+if (event.key == 'n'){
+flag = true;
+}
+buttonpresscount++;
+}
+
+var x = setInterval(function(){
+document.getElementById("demo").innerHTML = count;
+document.getElementById("press").innerHTML = buttonpresscount;
+count--;
+if (count==0){
+count = 60;}
+if (flag == true){
+count = count + 60;
+flag = false;
+}
+}, 1000);
+</script>
+
+</body>
+</html>
